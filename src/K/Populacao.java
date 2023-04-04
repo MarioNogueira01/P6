@@ -1,7 +1,6 @@
 package K;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Populacao {
@@ -9,13 +8,15 @@ public class Populacao {
     private static final Random generator = new Random(0);
     private ArrayList<Trajectory> trajetorias;
 
-    public Populacao (int n, int traj) {
+    public Populacao (int n, ArrayList<int[]> traj) {
         trajetorias = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
+
+        for (int i = 0; i < traj.size(); i++) {
             ArrayList<Ponto> pontos = new ArrayList<>();
-            for (int j = 0; j < traj[i]; j++) {
-                int x = generator.nextInt(100);
-                int y = generator.nextInt(100);
+            int[] points = traj.get(i);
+            for (int j = 0; j < points.length-1; j+=2) {
+                int x = points[i];
+                int y = points[i+1];
                 Ponto p1 = new Ponto(x, y);
                 pontos.add(p1);
             }
@@ -23,19 +24,9 @@ public class Populacao {
         }
     }
 
-    public void orden(List<FiguraGeometrica> fig){
-        ArrayList<Trajectory> trajord = new ArrayList<>();
-        for(int i = 0; i < trajetorias.size(); i++){
-            Trajectory traj1 = trajetorias.get(generator.nextInt(trajetorias.size()));
-            Trajectory traj2 = trajetorias.get(generator.nextInt(trajetorias.size()));
-            if(traj1.avaluation(fig) >= traj2.avaluation(fig)){
-                trajord.add(traj1);
-            }
-            else {
-                trajord.add(traj2);
-            }
-        }
-        this.trajetorias = trajord;
+    public void cut(){
+        int c = generator.nextInt(trajetorias.get(0).getpontos().size());
+        //TODO: acabar esta função
     }
 
     public String toString() {

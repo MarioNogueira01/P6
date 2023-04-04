@@ -15,9 +15,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int[] traj = readLines.readLine(sc.nextLine());
-        int[] traj_1 = readLines.readLine(sc.nextLine());
+        ArrayList<int[]> traj= new ArrayList<>();
 
+        for (int i = 0; i<2;i++){
+            traj.add(readLines.readLine(sc.nextLine()));
+        }
 
         List<FiguraGeometrica> obstaculos = new ArrayList<>();
         Constructor<?> constructor;
@@ -26,8 +28,8 @@ public class Main {
         String s;
         String[] aos;
 
-        Populacao x = new Populacao(2,traj_ex);
-
+        Populacao x = new Populacao(2,traj);
+        x.cut();
         sc.nextLine();
         while (sc.hasNextLine()) {
             s = sc.nextLine();
@@ -43,7 +45,6 @@ public class Main {
                 System.exit(0);
             }
         }
-        x.orden(obstaculos);
         System.out.println(x);
         sc.close();
     }
