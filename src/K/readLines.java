@@ -10,7 +10,7 @@ class readLines {
         String[] tokens = inPut.split(" ",-1);
         int[] result = new int[tokens.length];
         for (int i = 0;i< tokens.length;i++){
-            result[i] = Integer.parseInt(tokens[i]);
+            result[i] = Integer.parseInt(tokens[i]) ;
         }
         return result;
     }

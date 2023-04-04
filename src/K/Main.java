@@ -15,18 +15,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int[] starting = readLines.readLine(sc.nextLine());
-        Ponto startingPoint = new Ponto(starting[0], starting[1]);
-
-        int[] finish = readLines.readLine(sc.nextLine());
-        Ponto endPonint = new Ponto(finish[0], finish[1]);
-
-        int t = sc.nextInt();
-        int[] points_n = new int[t];
-
-        for (int i = 0; i < t; i++) {
-            points_n[i] = sc.nextInt();
-        }
+        int[] traj = readLines.readLine(sc.nextLine());
+        int[] traj_1 = readLines.readLine(sc.nextLine());
 
 
         List<FiguraGeometrica> obstaculos = new ArrayList<>();
@@ -36,7 +26,7 @@ public class Main {
         String s;
         String[] aos;
 
-        Populacao x = new Populacao(t,points_n,startingPoint,endPonint);
+        Populacao x = new Populacao(2,traj_ex);
 
         sc.nextLine();
         while (sc.hasNextLine()) {

@@ -9,7 +9,7 @@ public class Populacao {
     private static final Random generator = new Random(0);
     private ArrayList<Trajectory> trajetorias;
 
-    public Populacao (int n, int [] traj, Ponto inicial, Ponto fim) {
+    public Populacao (int n, int traj) {
         trajetorias = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             ArrayList<Ponto> pontos = new ArrayList<>();
@@ -19,8 +19,6 @@ public class Populacao {
                 Ponto p1 = new Ponto(x, y);
                 pontos.add(p1);
             }
-            pontos.add(0,inicial);
-            pontos.add(fim);
             trajetorias.add(new Trajectory(pontos));
         }
     }
