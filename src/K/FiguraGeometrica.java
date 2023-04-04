@@ -1,4 +1,4 @@
-package K;
+package J;
 
 public abstract class FiguraGeometrica {
     public FiguraGeometrica(){}

@@ -3,7 +3,7 @@
  * @version 1.3 03/03/2023
  * @inv verifica se a trajetoria intercepta a si mesma
  */
-package K;
+package J;
 import java.util.ArrayList;
 import java.util.List;
 

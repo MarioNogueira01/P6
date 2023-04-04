@@ -1,4 +1,4 @@
-package K;
+package J;
 
 public class Circunferencia extends FiguraGeometrica{
     Ponto a;

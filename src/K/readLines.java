@@ -1,4 +1,4 @@
-package K;
+package J;
 
 class readLines {
     private String inPut;

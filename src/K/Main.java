@@ -1,4 +1,4 @@
-package K;
+package J;
 
 import java.lang.reflect.*;
 import java.util.*;
@@ -28,7 +28,6 @@ public class Main {
             points_n[i] = sc.nextInt();
         }
 
-        Trajectory[] result = new Trajectory[t];
 
         List<FiguraGeometrica> obstaculos = new ArrayList<>();
         Constructor<?> constructor;
@@ -36,10 +35,9 @@ public class Main {
         FiguraGeometrica f;
         String s;
         String[] aos;
-        for (int i = 0; i < t; i++) {
-            ArrayList<Ponto> test = RandomCreation.random_Trajectory(points_n[i], startingPoint, endPonint);
-            result[i] = new Trajectory(test);
-        }
+
+        Populacao x = new Populacao(t,points_n,startingPoint,endPonint);
+
         sc.nextLine();
         while (sc.hasNextLine()) {
             s = sc.nextLine();
@@ -55,21 +53,8 @@ public class Main {
                 System.exit(0);
             }
         }
-
-        TrajectoryEvaluation[] evaluations = new TrajectoryEvaluation[t];
-
-        for (int i = 0; i < t; i++) {
-            evaluations[i] = new TrajectoryEvaluation(result[i], result[i].avaluation(obstaculos));
-        }
-
-        // Sorting evaluations
-        Arrays.sort(evaluations);
-
-        // Printing sorted trajectories
-        for (TrajectoryEvaluation eval : evaluations) {
-            System.out.println(eval.trajectory.toString());
-        }
-
+        x.orden(obstaculos);
+        System.out.println(x);
         sc.close();
     }
 }

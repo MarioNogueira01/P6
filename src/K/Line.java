@@ -4,7 +4,7 @@
  * @inv verifica a intercecao de cada segmento de reta do quadrado com o segmento de reta original
  */
 
-package K;
+package J;
 
 class Line {
 
