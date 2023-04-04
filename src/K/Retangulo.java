@@ -4,7 +4,7 @@
  * @inv verifica se cada lado do retangulo interceta com a trajetoria de reta
  */
 
-package J;
+package K;
 
 import java.util.ArrayList;
 

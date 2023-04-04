@@ -4,7 +4,7 @@
  * @inv confirma se os pontos estao no primeiro quadrante
  */
 
-package J;
+package K;
 
 class Ponto {
     private int x;
