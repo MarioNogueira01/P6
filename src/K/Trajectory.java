@@ -33,30 +33,4 @@ public class Trajectory {
         return sb.toString();
     }
 
-    public double distance(){
-        double dist = 0;
-        for(int i = 0; i < ponto.size()-1; i++){
-            dist += ponto.get(i).dist(ponto.get(i+1));
-        }
-        return dist;
-    }
-
-
-    public int internum(List<FiguraGeometrica> figuraGeometricas){
-        int num=0;
-        for(FiguraGeometrica fig: figuraGeometricas){
-            if(fig.intercecao(this)){
-                num++;
-            }
-        }
-        return num;
-    }
-
-
-    public double avaluation(List<FiguraGeometrica> figuraGeometricas){
-        double dist = this.distance();
-        int num = this.internum(figuraGeometricas);
-        return 1/(dist + Math.exp(num));
-
-    }
 }

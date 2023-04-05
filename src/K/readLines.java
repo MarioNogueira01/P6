@@ -7,7 +7,7 @@ class readLines {
     }
 
     public static int[] readLine(String inPut){
-        String[] tokens = inPut.split(" ",-1);
+        String[] tokens = inPut.split(" ",0);
         int[] result = new int[tokens.length];
         for (int i = 0;i< tokens.length;i++){
             result[i] = Integer.parseInt(tokens[i]) ;
